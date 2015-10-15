@@ -1,0 +1,19 @@
+---
+database:
+  host: localhost
+  user: foo
+  pass: bar
+  db: test
+
+rules:
+  - regexp: /(.{5})/
+    message: Must contain at least 5 characters
+    
+  - regexp: /\d{1}/
+    message: Must contain at least one number
+    
+  - regexp: /^((.)\2?(?!\2))+$/
+    message: Must not contain more than two consecutive identical characters
+    
+  - regexp: /([A-Z]|[^a-zA-Z\d]){1}/
+    message: Must contain at least one uppercase or special character
